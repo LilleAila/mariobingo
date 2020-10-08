@@ -1,0 +1,80 @@
+body {
+    background-color: #FDCA01;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mario {
+    width: 100vw;
+    height: 20vh;
+    background-image: url('./marioMakerLogo.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.mario:after {
+    content: 'Click Logo to make a random bingo.';
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+    display: grid;
+    place-items: center;
+}
+
+.mario:hover:after {
+    opacity: 1;
+}
+
+.bingo {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 80vh;
+    width: 100vw;
+    margin: 2vmin;
+    box-sizing: border-box;
+}
+
+.bingo .item {
+    /* background-color: white; */
+    /* color: black; */
+    border: 2px solid black;
+    border-radius: 0;
+    cursor: default;
+    user-select: none;
+    display: grid;
+    place-items: center;
+    font-weight: bolder;
+    position: relative;
+    /* transition: background-color 1s ease; */
+    cursor: pointer;
+}
+
+.notclicked {
+    background-color: white;
+    color: black;
+}
+
+.clicked {
+    background-color: black;
+    color: white;
+}
