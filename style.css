@@ -15,7 +15,7 @@ body {
     width: 100vw;
     height: 20vh;
     background-image: url('./marioMakerLogo.png');
-    background-size: auto 100%;
+    /* background-size: auto 100%; */
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -26,7 +26,7 @@ body {
 }
 
 .mario:after {
-    content: 'Click Logo to make a random bingo.';
+    content: 'Click image or spacebar to make a random bingo.';
     width: 100vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -72,10 +72,52 @@ body {
 
 .notclicked {
     background-color: white;
+    /* background-image: url('./smw/checkpointBowser.png'); */
     color: black;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .clicked {
     background-color: black;
+    /* background-image: url('./smw/checkpointMario.png'); */
     color: white;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.clicked.smb1 {
+    background-image: url('./smb1/checkpointMario.png');
+}
+
+.notclicked.smb1 {
+    background-image: url('./smb1/checkpointBowser.png');
+}
+
+.item span {
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+@media screen and (orientation: landscape) {
+
+    .mario,
+    .clicked,
+    .notclicked {
+        background-size: auto 100%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+
+    .mario,
+    .clicked,
+    .notclicked {
+        background-size: 100% auto;
+    }
 }
